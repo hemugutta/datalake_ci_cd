@@ -33,5 +33,5 @@ jobs:
       - name: Copy files to s3
         run: |
           for file in $(git diff --name-only HEAD^ HEAD); do   
-            aws s3 cp $file ${{ secrets.AWS_S3_BUCKET }}/ $file
+            aws s3 cp $file ${{ secrets.AWS_S3_BUCKET }}/$file
           done
